@@ -11,13 +11,13 @@ The following uses examples to introduce the use of virtual controls.
 
 QT has an animation sample program, appchooser, which has the following interface.
 
-![](../.gitbook/assets/virtual_appchooser.png)
+![](assets/virtual_appchooser.png)
 
 The image on the left is the interface when it is opened. When one of the icons is clicked, the icon will zoom in and show in the center.
 
 To automate this application, first spy and add the form control to the model, then right click the Panel object in the model, select "Edit Virtual Control", which will open the Virtual Control dialog:
 
-![](../.gitbook/assets/virtual_control_edit.png)
+![](assets/virtual_control_edit.png)
 
 Then perform the following steps：
 
@@ -28,11 +28,10 @@ Then perform the following steps：
 
 After finish editing the virtual controls：
 
-![](../.gitbook/assets/virtual_control_model.png)
+![](assets/virtual_control_model.png)
 
 You can see：
-
-* The position of the virtual control in the parent control \(Panel\)
+* The position of the virtual control in the parent control (Panel)
 * Operations on the virtual control, which includes `click`、`dblClick`、`wheel`。
 
 After generating code for the virtual control:
@@ -40,14 +39,15 @@ After generating code for the virtual control:
 ```javascript
 //Node.js code:
 model.getVirtual("Camera").click();
+
 ```
 
 Can see that the code is quite readable.
 
-## Virtual Control API
+
+### Virtual Control API
 
 Virtual control has the following APIs:
-
 * click
 * dblClick
 * wheel
@@ -56,18 +56,15 @@ Virtual control has the following APIs:
 
 Among them, the methods `click`, `dblClick`, and `wheel` work the same as other controls. The `takeSnapshot` method only intercepts the screenshot of the virtual control drawing area.
 
-### findSnapshot
-
+#### findSnapshot
 ```javascript
 findSnapshot(): string
 ```
-
 findSnapshot API, You can take multiple snapshots of a virtual control and then determine which one belongs to it at runtime.
 
-console.log\(snapshotKey\)![](https://github.com/cuketest/leanrunner-user-guide-en/tree/e119a10b5bafdad4213817e282a4271dfb9a38bc/model_mgr/assets/virtual_snapshot.png)
+console.log(snapshotKey)![](assets/virtual_snapshot.png)
 
 Here we have two snapshots on the virtual control, one called "checked" and one called "unchecked", which can then be used in the code:
-
 ```javascript
 let snapshotKey = await model.getVirtual("Virtual1").findSnapshot();
 console.log(snapshotKey)
@@ -75,7 +72,7 @@ console.log(snapshotKey)
 
 When the control is checked, the above code prints "check", and when it is not checked, the print content is "uncheck". Returns null if the snapshot at runtime does not match any existing snapshots in the model.
 
-### matchSnapshot
+#### matchSnapshot
 
 ```javascript
 matchSnapshot(snapshotKey: string): boolean

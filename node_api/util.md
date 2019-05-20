@@ -1,4 +1,4 @@
-# Util
+### Util
 
 Provide functions commonly used in automation scripts:
 
@@ -50,12 +50,20 @@ run();
 
 > **Note**：Some applications are multi-process. For example, a UI window is in another process launched by the main process. Stopping the main process in this case does not close the application interface. This is the case with the calculator app in Windows 10.
 
-* **takeScreenshot** Capture the entire screen image and save it in png format.
+* **takeScreenshot**
+Capture the entire screen image and save it in png format.
   * `filePath` is the file path and should end with a `.png` suffix. If a filename is provided, there is no return value. If `filePath` is null, it returns the base64 encoding of the screen image.
-  * `monitor` is the number of the monitor to capture screenshot. 0 is the first screen, 1 is the second screen etc.
-* **loadCsvFile** Read the CSV file and return an array of json objects. The key of each object is the column name, and the value is the data. For example, there is a data.csv file with the following content:
 
-first\_name,last\_name,company\_name,state,zip James,Butt,"Benton, John B Jr",LA,70116 Josephine,Darakjy,"Chanay, Jeffrey A Esq",MI,48116 Art,Venere,"Chemel, James L Cpa",NJ,8014
+  * `monitor` is the number of the monitor to capture screenshot. 0 is the first screen, 1 is the second screen etc.
+
+* **loadCsvFile**
+Read the CSV file and return an array of json objects. The key of each object is the column name, and the value is the data. For example, there is a data.csv file with the following content:
+
+
+first_name,last_name,company_name,state,zip
+James,Butt,"Benton, John B Jr",LA,70116
+Josephine,Darakjy,"Chanay, Jeffrey A Esq",MI,48116
+Art,Venere,"Chemel, James L Cpa",NJ,8014
 
 Run the following code to load the csv file and return the json data:
 
@@ -68,7 +76,7 @@ Run the following code to load the csv file and return the json data:
 
 It will return the following json data:
 
-```javascript
+```json
 [ { first_name: 'James',
   last_name: 'Butt',
   company_name: 'Benton, John B Jr',
@@ -85,4 +93,5 @@ It will return the following json data:
   state: 'NJ',
   zip: '8014' } ]
 ```
+
 

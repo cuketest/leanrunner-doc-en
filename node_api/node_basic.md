@@ -1,6 +1,6 @@
 # Basic Operations API
 
-## TestModel
+### TestModel
 
 TestModel is a class that load object model, it has the following declarations:
 
@@ -13,7 +13,7 @@ class TestModel {
 
 * **loadModel**
 
-loadModel load object model from a model file, and return the model object. The following is an example:
+loadModel load object model from a model file, and return the model object.  The following is an example:
 
 ```javascript
 const { TestModel } = require("leanpro.win");
@@ -29,4 +29,7 @@ run();
 * **bindToProcess**
 
 bindToProcess is used to bind the model to a process of the automation application. In some situation, there are multiple identical application instances during runtime, if this method is called to bind to one of the process, the rest calls on this model object will only manipulate this specific application.
+
+
+
 
