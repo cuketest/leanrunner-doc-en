@@ -1,4 +1,4 @@
-# Run
+# Execution
 
 LeanRunner supports multiple programming languages，For each language, you can choose the development tool that you are familiar with.
 
