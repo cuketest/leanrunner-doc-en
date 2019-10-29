@@ -32,6 +32,7 @@
     * [Installation](/misc/6_install.md)
     * [Samples](/misc/7_use_samples.md)
 8. [Appendix](/a_ui_elements.md)
+    * [Prepare NPM package for Offline Installation](/shared/npm_offline.md)
     * [VBScript API Notes](/misc/4_1_vbscript_apis.md)
     * [Visual Studio Integration](/misc/5_vs_integrate.md)
     * [Concepts](/a_vocabularies.md)
