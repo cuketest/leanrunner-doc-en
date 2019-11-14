@@ -26,6 +26,7 @@ export interface IWinContainer {
     getRadioButton(...conditions: ConditionFilter[]): IWinRadioButton;
     getScrollBar(...conditions: ConditionFilter[]): IWinScrollBar;
     getSlider(...conditions: ConditionFilter[]): IWinSlider;
+    getSpinner(...conditions: ConditionFilter[]): IWinSpinner;
     getTab(...conditions: ConditionFilter[]): IWinTab;
     getTabItem(...conditions: ConditionFilter[]): IWinTabItem;
     getTable(...conditions: ConditionFilter[]): IWinTable;
