@@ -8,7 +8,7 @@ Node.js, JScript (WScript), VBScript can be devekoped and run in the LeanRunner 
 
 The Script Editor is a multi-document interface that can edit multiple files at the same time. When the JavaScript script file is active, the Run button is allowed. The Run button is disabled when some non-script file tab is active. 
 
-## 运行配置
+## Run Profile
 
 ### Log level
 The log level of script to run can be configured to levels of `error`, `warn`, and `debug`. In the `error` level, the error message is output only when the error occurs. The `warn` level outputs the warning message. The `debug` level output the most information, which is generally used for scripts. debugging.

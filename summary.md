@@ -16,6 +16,7 @@
     * [Objects API](/node_api/node_operations.md)
     * [Containers API](/node_api/node_container.md)
     * [Basic Operations API](/node_api/node_basic.md)
+    * [Java Automation](/node_api/java/java_basic.md)
     * [Virtual Control API](/node_api/virtual_api.md)
     * [Descriptive Mode](/node_api/descriptive_mode.md)
     * [OCR (Optical Character Recognition)](/node_api/ocr.md)

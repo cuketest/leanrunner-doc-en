@@ -8,13 +8,15 @@ Model Manager provides several ways to identify one or more controls and add the
 
 
 The 3 buttons on the toolbar corresponds to the above 3 ways of adding objects:
+
 ![](assets/model-toolbar-spy.png)
 
 ## 1. Add Object
 
 Used to identify a single control and add its test object to the Test Model.
 
-When "Add Object" is clicked, Model Manager hide itself so that the user can click on the control to add the left mouse button on the screen. The model manager will detect the control and display the following dialog
+When "Add Object" is clicked, Model Manager hide itself so that the user can click on the control to add the left mouse button on the screen. The model manager will detect the control and display the following dialog:
+
 ![](assets/4.1_spy.png)
 
 Among them:
