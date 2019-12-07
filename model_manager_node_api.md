@@ -15,8 +15,14 @@
     * [OCR (Optical Character Recognition)](/node_api/ocr.md)
     * [Image APIs](/node_api/image.md)
     * [Util](/node_api/util.md)
-    * [QT Automation FAQ](/shared/qt_faq.md)
-    * [Windows Automation FAQ](/shared/win_faq.md)
+    * [Orchestration APIs](/shared/orchestrate.md)
+        * [Database Access](/shared/database.md)
+        * [Excel File Operations](/shared/excel.md)
+    * [Tips & Tricks on Automation](/shared/auto_faq.md)
+        * [Windows Automation FAQ](/shared/win_faq.md)
+        * [QT Automation FAQ](/shared/qt_faq.md)
+        * [QT Table Controll Automation](/shared/qt/qt_table.md)
+        * [QT Control Types Are Not Recognized](/shared/qt/qt_accessible.md)
 
 
 

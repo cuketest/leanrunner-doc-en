@@ -60,3 +60,6 @@ The sample code is as follows:
 **A** You can double-click the front of the control by `dblClick` first, then `pressKeys` to enter the date content.
 
 
+<a id="qt_table"></a>
+### Q: How to access Rows, Columns and Cell of Table in QT application.
+**A** Refer to [Automation of Qt Table Control](qt/qt_table.md) for more information.
