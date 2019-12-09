@@ -20,6 +20,7 @@
         * [Excel File Operations](/shared/excel.md)
     * [Tips & Tricks on Automation](/shared/auto_faq.md)
         * [Windows Automation FAQ](/shared/win_faq.md)
+        * [Automate Input Boxes](/shared/howto_edit_set.md)
         * [QT Automation FAQ](/shared/qt_faq.md)
         * [QT Table Controll Automation](/shared/qt/qt_table.md)
         * [QT Control Types Are Not Recognized](/shared/qt/qt_accessible.md)

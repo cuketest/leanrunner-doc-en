@@ -1,4 +1,4 @@
-# Automation of QT Table Control
+# QT Table Control Automation
 
 Here we will introduce tips & tricks on automating Qt Table controls. We will use table control provided by Qt Demo as an example.
 ![iamge](assets/spread_sheet_gui.png)
