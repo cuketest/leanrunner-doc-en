@@ -63,13 +63,3 @@ Another way is to drag and drop the nodes in the test object tree directly into 
 ![](assets/4.3_drag_dialog.png)
 
 You check the method call you want, click OK, and the call code is placed in the corresponding location of the file being edited. You can also choose whether to generate a descriptive mode code on this dialog.
-
-## Code Language
-
-In LeanRunner, Model Manager supports multiple languages, so choose your expected language before generating the code. To do this, click on the "Actions" => "Options" dialog, set the language of the code you need to generate, and click Save.
-
-![](assets/4.4_option.png)
-
-In CukeTest and LeanRunner Lite, only Node.js is supported, so this setting is read only.
-
-

@@ -1,7 +1,7 @@
-# QT Table Control Automation
+# HOWTO: QT Table Control Automation
 
 Here we will introduce tips & tricks on automating Qt Table controls. We will use table control provided by Qt Demo as an example.
-![iamge](assets/spread_sheet_gui.png)
+![iamge](assets/table/spread_sheet_gui.png)
 
 ### QT Table control
 
@@ -28,8 +28,8 @@ Qt 5.x:
 
 The structure in the table can also be seen in the test object tree identified by the model manager.
 
-![Qt 4.x SpreadSheet Object Tree](assets/nodetree_model.png)  
-![Qt 5.x SpreadSheet Object Tree](assets/nodetree_qt5.png)  
+![Qt 4.x SpreadSheet Object Tree](assets/table/nodetree_model.png)  
+![Qt 5.x SpreadSheet Object Tree](assets/table/nodetree_qt5.png)  
 
 Due to the different structure, the methods for obtaining these cells, which is the `DataItem` control, are also slightly different.
 
@@ -52,7 +52,7 @@ Use the `get[ControlType]` API, see [Containers API](/node_api/node_container.md
 ```
 Result:
 
-![image](assets/method1_result.png)  
+![image](assets/table/method1_result.png)  
 
 If it is Qt 5.x, due to the lack of row controls, the objects of all the DataItem controls are directly obtained from the Table control and stored in an array. The position information needs to be converted when the target control is removed:
 
@@ -67,7 +67,7 @@ If it is Qt 5.x, due to the lack of row controls, the objects of all the DataIte
 
 This code gets the object of the first cell in line 6. There are 6 DataItems in each row of the Table control, then the cell control in the nth row and mth column is an index of (n * 6 + m) DataItem controls.
 
-![image](assets/sheet_ruler_custom.png)  
+![image](assets/table/sheet_ruler_custom.png)  
 
 ### Solution 2: Get the control array with getControls method
 
@@ -90,7 +90,7 @@ If you need to traverse the Table control to get the cells that meet the conditi
 
 Result:  
 
-![image](assets/method2_result.png)  
+![image](assets/table/method2_result.png)  
 
 A warning will be reported during operation. This is because the DataItem control does not exist in the first row control, which causes a warning message.
 

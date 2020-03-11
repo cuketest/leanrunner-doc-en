@@ -39,19 +39,19 @@ The sample code is as follows:
 
 1. After selecting a control, "Add Object" window appears, click the "Verify Uniqueness". If this is not unique, a message window similiar to the following appears.
 
-   ![](assets/cannot_unique.png)
+   ![](assets/faq/cannot_unique.png)
 
 2. Objects that cannot be uniquely identified are displayed in red.
 
-   ![](assets/none_unique_red.png)
+   ![](assets/faq/none_unique_red.png)
 
 3. Now when choose to add the object to the model, a dialog box appears, asking if you need to add "index":
 
-   ![](assets/confirm_add_index.png)
+   ![](assets/faq/confirm_add_index.png)
 
 4. At this time, selecting "Yes" will add necessary index when adding these objects to the model:
 
-   ![](assets/index_added.png)
+   ![](assets/faq/index_added.png)
 
 >Note: Remember to first verify the uniqueness and then added to the model to have the indexes added.
 

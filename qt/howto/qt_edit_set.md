@@ -1,4 +1,4 @@
-# HOWTO: Automate Input Boxes
+## HOWTO: Automate Qt Text Edit Controls
 
 There are serveral different types of input boxes on Windows, such as normal Edit boxes, date format input boxes, editable cells on table control, and so on. Let's explain how to modify their text content for several common input boxes.
 
@@ -8,7 +8,7 @@ For Edit boxes, it has the `Edit` control type. You can directly call the `set()
 
 Here we introduce Qt's `Spinner` control. The following code generates a random number and enters it into the input box, and then obtains the modified value from it. If the two values are consistent, it means the update is successful.
 
-![](assets/qt_blockslave.png)
+![](assets/edit_set/qt_blockslave.png)
 
 We can call the `set()` method like this:
 
@@ -48,7 +48,7 @@ An alternative solution can be: calling the control's `dblClick()` method to sel
   
 The cell is part of Table control and cell's control type is `DataItem`. You can double-click the cell to enter the edit mode.  
 
-![](assets/qt_books.png)  
+![](assets/edit_set/qt_books.png)  
 
 This control can also use the `set()` method. To do it, execute the `set()` method assignment after focusing on the target cell, as follows:  
 
