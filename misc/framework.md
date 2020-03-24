@@ -6,7 +6,7 @@ Framework APIs can be found in “leanrunner” builtin packge. The following sa
 
 
 ```javascript
-const { step, stepGroup, Workflow, askInput } = require('leanrunner');
+const { step, scenario, Workflow, askInput } = require('leanrunner');
 ```
 
 ## Workflow API
@@ -23,20 +23,20 @@ The Workflow API is used to define steps and scenarios in automation scripts. Wi
 
 Because most automation actions are now async, the `step` API as well as step function are async, the same is true for other workflow APIs. It means that in order for steps to run in sequence, you should `await` each step call. 
 
-### 2. stepGroup
+### 2. scenario
 
-The stepGroup function defines a scenario in workflow. A scenario is a sequence of steps that performs meaningful to user. It also takes 2 parameters, title of the scenario and an async function. Inside this function, multiple `step` calls can be made.
+The scenario function defines a scenario in workflow. A scenario is a sequence of steps that performs meaningful to user. It also takes 2 parameters, title of the scenario and an async function. Inside this function, multiple `step` calls can be made.
 
 
 ```javascript
-   async stepGroup(title: string, group: async () => Promise<void>)
+   async scenario(title: string, group: async () => Promise<void>)
 ```
 
 ### 3. run
 
-`step` and `stepGroup` are workflow API, can be accessed using Workflow object. They are also able to be called directly without “Workflow.” prefix.
+`step` and `scenario` are workflow API, can be accessed using Workflow object. They are also able to be called directly without “Workflow.” prefix.
 
-Another workflow function is `run`, which takes a function as API and call this function as the workflow. There can be multiple step and stepGroup calls inside the function.
+Another workflow function is `run`, which takes a function as API and call this function as the workflow. There can be multiple `step` and `scenario` calls inside the function.
 
 ### The role of workflow API
 

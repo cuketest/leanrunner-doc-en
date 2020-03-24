@@ -9,6 +9,9 @@ static launchProcess(exePath: string, ...args: string[]): any;
 static stopProcess(proc: ChildProcess): boolean;
 static takeScreenshot(filePath: string = null, monitor: number = 0): string | void
 static loadCsvFile(filePath: string): Promise<RowCsv[]>;
+static saveToCsvFile(rows: RowCsv[], filePath: string): boolean;
+static getClipboard(): Promise<string>;
+static setClipboard(text: string): Promise<void>;
 }
 ```
 
@@ -77,21 +80,67 @@ Run the following code to load the csv file and return the json data:
 It will return the following json data:
 
 ```json
-[ { first_name: 'James',
-  last_name: 'Butt',
-  company_name: 'Benton, John B Jr',
-  state: 'LA',
-  zip: '70116' },
-{ first_name: 'Josephine',
-  last_name: 'Darakjy',
-  company_name: 'Chanay, Jeffrey A Esq',
-  state: 'MI',
-  zip: '48116' },
-{ first_name: 'Art',
-  last_name: 'Venere',
-  company_name: 'Chemel, James L Cpa',
-  state: 'NJ',
-  zip: '8014' } ]
+[
+{ "first_name": "James",
+  "last_name": "Butt",
+  "company_name": "Benton, John B Jr",
+  "state": "LA",
+  "zip": "70116" },
+{ "first_name": "Josephine",
+  "last_name": "Darakjy",
+  "company_name": "Chanay, Jeffrey A Esq",
+  "state": "MI",
+  "zip": "48116" },
+{ "first_name": "Art",
+  "last_name": "Venere",
+  "company_name": "Chemel, James L Cpa",
+  "state": "NJ",
+  "zip": "8014" } 
+]
 ```
 
+* **saveToCsvFile**  
 
+After getting the data in json format, you can use the `saveToCsvFile(rows, filePath)` function to save the data as a csv file.
+
+```javascript
+    Util.saveToCsvFile(rows: RowCsv[], filePath: string): boolean;
+```
+
+  * The parameter `rows` is the row data, its key is the column name, and its value is the element in the cell;
+  * The parameter `filePath` is the saved file path;
+
+For example, we need to get the data from the `data.csv` file read in the previous step and save them in the `data_bak.csv` file in the script directory. The code is as follows:
+
+```js
+(async function() {
+    let data = await Util.loadCsvFile('C:\\temp\\data.csv');
+    // console.log(data);
+    Util.saveToCsvFile(data, "./data_bak.csv");
+})();
+```  
+
+After run, `data_bak.csv` file is generated in the root directory. When open it, you can notice that the content is the same as the content of the `data.csv` file.
+
+
+* **Clipboard Operation**
+
+`getClipboard` gets the text content in the clipboard, `setClipboard` sets the text content to the clipboard:
+
+
+```js
+    Util.getClipboard(): Promise<string>;
+    Util.setClipboard(text: string): Promise<void>;
+```
+
+E.g.
+
+```js
+(async function() {
+
+    await Util.setClipboard('(🦄)');
+    let text = await Util.getClipboard();
+
+    console.log(text);
+})();
+```
