@@ -24,6 +24,58 @@ Among them:
 * The control user clicked is displayed as a leaf node on the tree. its immediate left and right control are also displayed in the tree structure. It is likely that these left and right controls is also be needed. Users can also check them if needed.
 * Each node has a set of properties, you need to select the properties that can just uniquely identify the control. For example, `AutomationId` is typically set by the developer to uniquely identify the control. If it is, you can just select AutomationId. Otherwise, if the `ClassName` + `Name` property can uniquely identify the control, you can also choose both. The `Type` attribute is mandatory.
 
+
+<a id="unique_verify"></a>  
+
+### Uniqueness of Identification
+
+After the control is spied and test objects are listed, it automatically verifies whether they can uniquely identify the control. At the same time, if the UI of target application changes, you can also manually click !["Control Uniqueness Verification" button](./assets/spy-toolbar_unique_verif.png) to verify it can still identify the target object.
+
+If it finds these object properties cannot locate the target control, when the user tries to adds these objects to the model, he will be prompted about it. If want to uniquely locate the target control, the user can click the "**Automatic Add Index**" button to add `index` property for objects that cannot be uniquely identified.
+
+This feature, together with "**Automatic Add Index**" feature, can you quickly add unique identifying objects to the model that can uniquely locate a control.
+
+<a id="unique_auto_verify"></a>  
+
+#### Automatic uniqueness verification
+
+After spied a control, it automatically verifies the uniqueness of the identification. If the user changes the object selection or identification properties, identification may also change, so the uniqueness will be re-verified automatically.
+
+When verifying the object that cannot uniquely locate the control or its parent will be marked as red. Uniqueness verification will be triggered automatically in the following situations:
+
+-After a control is picked by the user;
+-When any object on tree structure is checked or unchecked;
+-When checking or unchecking identification attributes;
+
+After the uniqueness verification is done, the prompt will be shown at the bottom of the spy window, showing whether the current test objects can uniquely identify controls. You can also see **Duration**, which shows the time it takes to locate the target control using these objects. This time is also the time needed to locate the control during the actual script execution. Therefore, check and uncheck the parent nodes and the identification properties to tune it in order to minimize the time-consumption, which can improve the performance of the control in actual operation.
+
+During the verification process, a "Cancel" link is displayed on the status bar. You can click it to cancel the unique verification if you don't need it.
+
+#### Manual uniqueness verification
+
+When the user application interface changes, you can manually click the "Verify Uniqueness" button. If the control can be uniquely identified, the red frame will flash to highlight the control. If cannot, it will display an orange frame around the control.
+
+When the target control fails to pass the uniqueness verification, it will use <font color="red">red</font> to identify the parent node that is not unique in the tree where the control is located; and <font color="orange"> orange</font> highlighting box will be used in the application to identify the control, as shown below.
+
+![](./assets/spy-panel_unpass.png)  
+
+![](./assets/spy-panel_pass.png)  
+
+<a id="auto_index"></a>  
+
+### Add index property
+
+!["Add index" button](./assets/spy-toolbar_add_index.png)
+
+When the control cannot be uniquely located, it can be solved by adding an `index` property. When an object matches multiple controls, the `index` control in the list of matching controls is returned. The default is 0, which is the first matching control.
+
+Using the "Add Index Value" button will automatically add the "index" value to the <font color="red">red</font> node to make it unique.
+
+After adding the index, the uniqueness will be re-verified. There may still be other <font color="red"> red </font> nodes down the hierarchy. You can repeat the "Add Index Value" step until the entire objects chain can uniquely locate the required control.
+
+It should be noted that the "index" property is not an inherent property of a control, instead, it's the order the control in the parent structure or in the search results of the control, so it may change as the layout of the control changes. If you find that the layout of your automation application may change dynamically, choose to avoid using the index property.
+
+
 ## 2. Batch Add
 
 When there are many controls that need to be added to the model, it is cumbersome to spy and add controls one by one. You can add controls in batches by clicking on "Add Batch Controls" in the menu. The method is to click the ![](assets/04-09-batch-add-button.png) button on the toolbar of the Model Manager. When clicked, Model Manager window will be hidden, you select the one you want to add to the model. When a control is clicked, the "Batch Add Controls" window will pop up, as shown below:
