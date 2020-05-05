@@ -24,5 +24,8 @@
             "bookmark": "assets/images/favicon.ico",
             "appleTouch": "assets/images/apple-touch-icon.png"
         }
+    },
+    "styles": {
+        "website": "styles/website.css"
     }
 }

@@ -38,6 +38,7 @@
     * [Workbench](/server/workbench.md)
     * [User and Permissions](/server/user_manage.md)
     * [Resource and Configuration](/server/config.md)
+    * [Software License and Quota](/server/license.md)
 7. [Installation and Samples](/misc/install.md)
     * [Installation](/misc/6_install.md)
     * [Samples](/misc/7_use_samples.md)
